@@ -1,0 +1,25 @@
+[general]
+accounts = gmail
+
+[Account gmail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/.mail/gmail
+
+[Repository gmail-remote]
+type = Gmail
+remoteuser = kreunen.eric@gmail.com
+remotepass = XXXXXX
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+maxconnections = 2
+folderfilter = lambda folder: folder in [
+  'lists/linux-kernel',
+  'lists/debian-announce',
+  'lists/debian-news', 
+  'lists/debian-devel',
+  'lists/debian-security-announce'
+]
